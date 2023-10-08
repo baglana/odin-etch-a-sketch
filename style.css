@@ -12,7 +12,7 @@ body {
   margin: 0;
 }
 
-.container {
+.grid {
   display: flex;
   flex-wrap: wrap;
 }

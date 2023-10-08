@@ -1,4 +1,4 @@
-const container = document.querySelector('.container');
+const grid = document.querySelector('.grid');
 
 addEventListener('DOMContentLoaded', () => {
   const btn = document.querySelector('#new-btn');
@@ -9,7 +9,7 @@ addEventListener('DOMContentLoaded', () => {
       16
     );
     if (selectedSize !== null) {
-      removeAllChildElements(container);
+      removeAllChildElements(grid);
       createGrid(+selectedSize);
     }
   });
@@ -44,7 +44,7 @@ function createGrid(size = 16) {
       square.style.filter = `brightness(${squareBrightness[i]})`;
     });
 
-    container.appendChild(square);
+    grid.appendChild(square);
   }
 }
 
