@@ -23,16 +23,25 @@ function removeAllChildElements(parent) {
 
 function createGrid(size = 16) {
   size = (size > 100) ? 100 : size;
+  const squareBrightness = new Array(size * size).fill(1);
+  
   for (let i = 1; i <= size * size; i++) {
     const square = document.createElement('div');
     square.classList.add('square');
     square.style.width = `${100 / size}%`;
     
     square.addEventListener('mouseenter', () => {
-      const red = getRandom(0, 256);
-      const green = getRandom(0, 256);
-      const blue = getRandom(0, 256);
-      square.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+      // change color on first interaction
+      if (squareBrightness[i] === 1) {
+        const red = getRandom(0, 256);
+        const green = getRandom(0, 256);
+        const blue = getRandom(0, 256);
+        square.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+      }
+
+      // decrease brightness by 10% after each interaction
+      squareBrightness[i] -= 0.1;
+      square.style.filter = `brightness(${squareBrightness[i]})`;
     });
 
     container.appendChild(square);
