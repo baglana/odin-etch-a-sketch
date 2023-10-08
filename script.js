@@ -49,7 +49,7 @@ function createGrid(size = 16) {
 }
 
 function getRandom(from = 0, to = 1) {
-  return from + (Math.random() * to);
+  return from + Math.floor((Math.random() * to));
 }
 
 createGrid();
