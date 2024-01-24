@@ -15,4 +15,4 @@ A project to practice DOM manipulation and events
 - Hovering over an empty square paints it to a random color
 - Progressive darkening effect
   - each interaction adds 10% more black or color to the square
-  - a square becomes completely black after ten interactions.
+  - a square becomes completely black after ten interactions
